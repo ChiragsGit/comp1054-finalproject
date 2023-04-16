@@ -1,0 +1,254 @@
+/* Universal Style */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* set up the nav so when it is clicked, it will automatically bring you to that part of the page smoothly*/
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    max-width: 100%;
+    scroll-behavior: smooth;
+
+}
+
+/* Locally hosted */
+@font-face {
+    font-family: 'advent_proregular';
+    src: url('./adventpro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Importing from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
+
+/* Added a gif to the background and styled it  */
+body {
+    background-image: url(./pictures/anime.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Typography */
+p,
+li,
+a {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 2rem;
+    color: #ffffff;
+    line-height: 1.6;
+    padding-bottom: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'advent_proregular', sans-serif;
+    font-size: 4rem;
+    padding-bottom: 0.5em;
+    color: #ffffff;
+}
+
+/* Nav */
+nav {
+    background: scroll;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 2em;
+}
+
+/* added hover effect to the nav */
+nav a:hover {
+    background-color: #3866aa;
+    color: #a9fdff;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20em;
+    max-width: 50vw;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30em;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* used this to line up the bullet points so it doesn't look awkward */
+.skills ul {
+    padding-left: 2em;
+}
+
+/* Used grid to align everything in the center and make sure the layout fit the theme of the website */
+
+.about-me {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-me-header {
+    grid-column: 1 / span 2;
+}
+
+.about-me-image {
+    justify-self: end;
+}
+
+.about-me-content {
+    grid-column: 2;
+}
+
+/* added styling to the image and limited how large the image can get */
+.selfie {
+    max-width: 15vw;
+    display: block;
+    border-radius: 4%;
+}
+
+/* added padding between each section to have it flow and when using the navigation it shows in the middle of the page perfectly */
+#about-me,
+#projects,
+#skills,
+#contact {
+    padding-top: 30vh;
+}
+
+/* Contact Form */
+.contact form {
+    max-width: 40vw;
+    padding: 2em;
+    background-color: #3866aa;
+    color: #ffffff;
+}
+
+/* styled the input text a user adds to contact me using a form */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.2rem;
+    width: 96%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: none;
+    background-color: #a9fdff;
+}
+
+/* designed the submit and reset buttons and the font it uses */
+.contact input[type="submit"],
+.contact input[type="reset"] {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.2rem;
+    padding: 1em;
+    background-color: #a9fdff;
+    color: #3866aa;
+    border: none;
+    cursor: pointer;
+}
+
+/* added styling to the submit and reset buttons when you hover over them */
+.contact input[type="submit"]:hover,
+.contact input[type="reset"]:hover {
+    background-color: #3866aa;
+    color: #a9fdff;
+}
+
+small,
+label {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1rem;
+}
+
+/* So the user doesn't change the size of the box */
+textarea {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.2rem;
+    resize: none;
+}
+
+/* designed the footer, nothing special */
+footer {
+    color: #ffffff;
+}
+
+/* Mobile design */
+@media (max-width: 550px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        flex: 0 0 auto;
+        /* Reset the flex property to its default values */
+        width: auto;
+        /* Reset the width property to its default value */
+        padding: 1rem;
+    }
+
+    .wrapper {
+        max-width: 100%;
+    }
+
+    .about-me {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .about-me-header {
+        grid-column: 1 / span 2;
+    }
+
+    .about-me-image {
+        justify-self: end;
+    }
+
+    .about-me-content {
+        grid-column: 1;
+    }
+
+    .selfie {
+        max-width: 50vw;
+        display: block;
+    }
+
+    /* Adjust the padding value based on the height of your navigation bar when using a phone so there isn't a weird gap */
+    #about-me,
+    #projects,
+    #skills,
+    #contact {
+        padding-top: 10vh;
+    }
+
+    .contact form {
+        max-width: 100vw;
+        padding-right: 4rem;
+    }
+
+}
